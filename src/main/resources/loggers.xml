@@ -21,13 +21,14 @@
         <constructor-arg value="5"/>
     </bean>
 
-    <!--<bean id="combinedEventLogger" class="com.spring.core.loggers.CombinedEventLogger">
+    <bean id="combinedEventLogger" class="com.spring.core.loggers.CombinedEventLogger">
         <constructor-arg>
             <list>
                 <ref bean="fileEventLogger"/>
                 <ref bean="consoleEventLogger"/>
             </list>
         </constructor-arg>
-    </bean>-->
+    </bean>
+    
 
 </beans>

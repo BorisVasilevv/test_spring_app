@@ -41,11 +41,11 @@ public class App {
         e.setMessage("wfegr");
         e1.setMessage("message to 1");
 
-
-
-
         app.logEvent(Eventype.INFO,e);
         app.logEvent(Eventype.INFO,e1);
+        app.logEvent(null, new Event("efr"));
+        app.logEvent(Eventype.ERROR, new Event("error"));
+
 
 
         ctx.close();
@@ -63,6 +63,7 @@ public class App {
     }
 
     private void logEvent(Eventype eventype, Event event){
+        event.setMessage(event.getMessage().replaceAll(String.valueOf(client.getId()), client.getFullName()));
         EventLogger logger= loggers.get(eventype);
         if(logger==null){
             logger=defaultLogger;

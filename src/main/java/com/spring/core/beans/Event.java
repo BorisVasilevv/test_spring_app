@@ -19,20 +19,10 @@ public class Event {
     public Event(String message){
         this.id=eventCounter++;
         this.message=message;
-        //this.date= Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
-        //df= new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        this.date= Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
+        df= new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
     }
 
-    public Event(String message,Date date){
-        this.id=eventCounter++;
-        this.message=message;
-        this.date=date;
-    }
-
-    public Event(Date date){
-        this.date=date;
-        this.id=eventCounter++;
-    }
 
     public Event(Date date,DateFormat format){
         this.date=date;
@@ -48,7 +38,7 @@ public class Event {
 
     @Override
     public String toString(){
-        return String.format("Event\nid=%d\nmessage=%s\ndate=%s\n", id, message, df.format(date));
+        return String.format("Event\nid=%d\nmessage: \"%s\"\ndate: %s\n", id, message, df.format(date));
     }
 
 }
