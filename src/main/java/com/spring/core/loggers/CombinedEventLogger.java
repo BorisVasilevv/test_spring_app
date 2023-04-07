@@ -3,7 +3,7 @@ package com.spring.core.loggers;
 import com.spring.core.beans.Event;
 
 import java.util.Collection;
-import java.util.Map;
+
 
 public class CombinedEventLogger implements EventLogger{
 

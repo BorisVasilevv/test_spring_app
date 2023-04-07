@@ -43,7 +43,10 @@ public class FileEventLogger implements EventLogger{
 
     protected void init() throws IOException{
         this.file=new File(filename);
-        if(!file.canWrite()) throw new IOException();
+        if(file.exists()&&!file.canWrite())
+            throw new IOException("Can't write to file " + filename);
+        else if (!file.exists())
+            file.createNewFile();
     }
 
 }

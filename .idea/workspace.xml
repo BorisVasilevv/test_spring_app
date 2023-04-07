@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2007272b-fa83-494a-aa14-b7bb19176dd1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/beans/Eventype.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/CombinedEventLogger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/loggers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/beans/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/beans/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/beans/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/beans/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/CacheFileEventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/CacheFileEventLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/ConsoleEventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/ConsoleEventLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/EventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/EventLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/FileEventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/FileEventLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/some.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/some.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/CombinedEventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/loggers/CombinedEventLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/loggers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/loggers.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

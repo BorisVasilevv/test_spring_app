@@ -9,10 +9,12 @@
     <bean id="consoleEventLogger" class="com.spring.core.loggers.ConsoleEventLogger">
     </bean>
 
+
     <bean id="fileEventLogger" class="com.spring.core.loggers.FileEventLogger"
-          init-method="init" abstract="true">
-        <constructor-arg value="C:\Users\PC\Desktop\test.txt"/>
+          init-method="init" >
+        <constructor-arg value="target/events_log.txt" />
     </bean>
+
 
     <bean id="fileCacheEventLogger" class="com.spring.core.loggers.CacheFileEventLogger"
           parent="fileEventLogger" destroy-method="destroy">
