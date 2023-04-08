@@ -3,8 +3,10 @@ package com.spring.core.beans;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class Event {
@@ -35,6 +37,12 @@ public class Event {
     }
 
     public void setMessage(String message){this.message=message; }
+
+    public static boolean isDay(){
+        LocalTime time=LocalTime.now();
+        return (time.getHour()<17&&time.getHour()>=8);
+    }
+
 
     @Override
     public String toString(){

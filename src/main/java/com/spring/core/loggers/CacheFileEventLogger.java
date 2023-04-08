@@ -32,6 +32,11 @@ public class CacheFileEventLogger extends FileEventLogger implements EventLogger
         }
     }
 
+    @Override
+    public String getName() {
+        return "CacheFileEventLogger";
+    }
+
     /*@Override
     protected void init() throws IOException {
         super.init();

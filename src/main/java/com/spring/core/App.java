@@ -1,12 +1,10 @@
 package com.spring.core;
 
+import com.spring.core.aspects.StatisticAspect;
 import com.spring.core.beans.Client;
 import com.spring.core.beans.Event;
 import com.spring.core.beans.Eventype;
-import com.spring.core.loggers.CacheFileEventLogger;
-import com.spring.core.loggers.ConsoleEventLogger;
 import com.spring.core.loggers.EventLogger;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -25,18 +23,18 @@ public class App {
         this.loggers=map;
     }
 
-
-    public App(){}
-
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx= new ClassPathXmlApplicationContext("some.xml", "loggers.xml");
+        ConfigurableApplicationContext ctx= new ClassPathXmlApplicationContext("main.xml", "loggers.xml");
         App app=(App) ctx.getBean("app");
         Event e=(Event)ctx.getBean("event");
+        Event.isDay();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
             throw new RuntimeException(ex);
         }
+        //System.out.println(app.client.getGreeting());
+
         Event e1=(Event)ctx.getBean("event");
         e.setMessage("wfegr");
         e1.setMessage("message to 1");
@@ -46,9 +44,15 @@ public class App {
         app.logEvent(null, new Event("efr"));
         app.logEvent(Eventype.ERROR, new Event("error"));
 
-
+        Map<Class<?>, Integer> integerMap= ((StatisticAspect)ctx.getBean("statisticAspect")).getStatistic();
 
         ctx.close();
+        for (Class<?> key:integerMap.keySet()) {
+            System.out.print(key.getName());
+            System.out.print("–");
+            System.out.println(integerMap.get(key));
+        }
+
 
 
     }

@@ -20,4 +20,9 @@ public class CombinedEventLogger implements EventLogger{
             logger.logEvent(event);
         }
     }
+
+    @Override
+    public String getName() {
+        return "CombinedEventLogger";
+    }
 }

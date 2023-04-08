@@ -41,6 +41,11 @@ public class FileEventLogger implements EventLogger{
 
     }
 
+    @Override
+    public String getName() {
+        return "FileEventLogger";
+    }
+
     protected void init() throws IOException{
         this.file=new File(filename);
         if(file.exists()&&!file.canWrite())

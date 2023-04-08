@@ -2,20 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 
        http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+       http://www.springframework.org/schema/util/spring-util-4.3.xsd
+
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
     <import resource="loggers.xml"/>
+    <import resource="aspects.xml"/>
 
-    <bean id="client" class="com.spring.core.beans.Client">
+    <context:annotation-config/>
+    <aop:aspectj-autoproxy/>
+
+    <bean id="client" class="com.spring.core.beans.Client" scope="prototype">
         <constructor-arg index="0" value="${id}"/>
         <constructor-arg value="${name}"/>
-
-        <property name="greeting" value="${greeting}"/>
+        <property name="greeting" value="#{systemEnvironment['USERNAME']}"/>
     </bean>
 
     <bean id="event" class="com.spring.core.beans.Event" scope="prototype">
@@ -28,7 +40,10 @@
 
     <bean id="app" class="com.spring.core.App">
         <constructor-arg ref="client"/>
-        <constructor-arg ref="fileEventLogger"/>
+
+        <constructor-arg value="#{T(com.spring.core.beans.Event).isDay()
+                                                                ? fileEventLogger
+                                                                : consoleEventLogger}"/>
         <constructor-arg ref="loggerMap"/>
 
     </bean>
