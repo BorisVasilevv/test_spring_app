@@ -1,7 +1,8 @@
 package com.spring.core.beans;
 
-public enum Eventype {
+public enum EventType {
 
     INFO,
+    WARNING,
     ERROR;
 }

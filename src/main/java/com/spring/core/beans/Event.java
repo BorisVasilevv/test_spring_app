@@ -46,7 +46,7 @@ public class Event {
 
     @Override
     public String toString(){
-        return String.format("Event\nid=%d\nmessage: \"%s\"\ndate: %s\n", id, message, df.format(date));
+        return String.format("Event\tid=%d\tmessage: \"%s\"\tdate: %s\n", id, message, df.format(date));
     }
 
 }

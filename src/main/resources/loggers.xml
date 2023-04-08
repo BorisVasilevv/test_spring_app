@@ -7,6 +7,7 @@
  		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
 
+    <import resource="db.xml"/>
     <bean id="consoleEventLogger" class="com.spring.core.loggers.ConsoleEventLogger">
     </bean>
 
@@ -22,11 +23,17 @@
         <constructor-arg value="5"/>
     </bean>
 
+    <bean id="dbLogger" class="com.spring.core.loggers.DBLogger">
+        <constructor-arg ref="jdbcTemplate"/>
+
+    </bean>
+
     <bean id="combinedEventLogger" class="com.spring.core.loggers.CombinedEventLogger">
         <constructor-arg>
             <list>
                 <ref bean="fileEventLogger"/>
                 <ref bean="consoleEventLogger"/>
+                <!--<ref bean="dbLogger"/>-->
             </list>
         </constructor-arg>
     </bean>

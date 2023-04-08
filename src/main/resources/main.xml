@@ -24,9 +24,10 @@
     <context:annotation-config/>
     <aop:aspectj-autoproxy/>
 
-    <bean id="client" class="com.spring.core.beans.Client" scope="prototype">
+    <bean id="client" class="com.spring.core.beans.Client">
         <constructor-arg index="0" value="${id}"/>
-        <constructor-arg value="${name}"/>
+        <constructor-arg index="1" value="${name}"/>
+        <constructor-arg index="2" value="${city}"/>
         <property name="greeting" value="#{systemEnvironment['USERNAME']}"/>
     </bean>
 
@@ -52,6 +53,7 @@
         <property name="locations">
             <list>
                 <value> classpath:client.properties</value>
+                <value> classpath:db.properties</value>
             </list>
         </property>
 
@@ -61,6 +63,7 @@
     <util:map id="loggerMap">
         <entry key="INFO" value-ref="consoleEventLogger"/>
         <entry key="ERROR" value-ref="combinedEventLogger"/>
+        <entry key="WARNING" value-ref="dbLogger"/>
     </util:map>
 
 
