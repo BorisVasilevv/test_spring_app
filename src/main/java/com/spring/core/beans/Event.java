@@ -15,7 +15,6 @@ public class Event {
     private long id;
     private String message;
     private Date date;
-
     private DateFormat df;
 
     public Event(String message){
@@ -32,9 +31,11 @@ public class Event {
         this.df=format;
     }
 
+    public long getId(){return id;}
     public String getMessage(){
         return message;
     }
+    public Date getDate(){return date;}
 
     public void setMessage(String message){this.message=message; }
 

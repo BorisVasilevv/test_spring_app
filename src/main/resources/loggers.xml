@@ -33,7 +33,7 @@
             <list>
                 <ref bean="fileEventLogger"/>
                 <ref bean="consoleEventLogger"/>
-                <!--<ref bean="dbLogger"/>-->
+                <ref bean="dbLogger"/>
             </list>
         </constructor-arg>
     </bean>

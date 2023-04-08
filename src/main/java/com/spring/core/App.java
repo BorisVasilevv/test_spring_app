@@ -24,7 +24,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx= new ClassPathXmlApplicationContext("main.xml", "loggers.xml");
+        ConfigurableApplicationContext ctx= new ClassPathXmlApplicationContext("main.xml");
         App app=(App) ctx.getBean("app");
         Event e=(Event)ctx.getBean("event");
         Event.isDay();
